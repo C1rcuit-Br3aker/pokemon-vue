@@ -2,18 +2,7 @@ body {
   margin: 0;
   font-family: 'Sigmar One', cursive;
   text-align: center;
-  animation: pulse 30s running;
 }
-
-@keyframes pulse {
-  0% {
-    filter: hue-rotate(0);
-  }
-  100% {
-    filter: hue-rotate(160deg);
-  }
-}
-
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -40,7 +29,21 @@ h1, h2 {
   justify-content: center;
   min-height: 100vh;
 
-  background: #b00;
+  background: #bdd4de;
+}
+
+.card {
+  background: #efefef;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+}
+
+.card__header {
+  background: #FF530D;
+  color: #efefef;
+}
+
+.card__content {
+  padding: 1rem;
 }
 
 .frame {
@@ -66,10 +69,12 @@ h1, h2 {
 }
 
 .choice {
+  width: 25%;
   margin: 0 1rem;
 }
 
 .btn {
+  width: 100%;
   padding: 0.5rem;
   border: 0;
   border-radius: 0.4rem;
@@ -77,4 +82,5 @@ h1, h2 {
   background: #00b;
   color: #fff;
   font: inherit;
+  outline: none;
 }

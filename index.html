@@ -9,26 +9,32 @@
   </head>
   <body>
     <div class="app">
-      <h1>Who's That Pokemon?</h1>
-      <div class="frame">
-        <img :src="whosThat.sprite" alt="" class="whos-that" :class="pick ? 'show': null">
+      <div class="card">
+        <h1 class="card__header">Who's That Pokemon?</h1>
+        <div class="card__image">
+          <div class="frame">
+            <img :src="whosThat.sprite" alt="" class="whos-that" :class="pick ? 'show': null">
+          </div>
+        </div>
+        <div class="card__content">
+          <ul class="choices row">
+            <li class="choice" v-for="choice in choices">
+              <button class="btn" v-on:click="choose(choice)">{{ choice }}</button>
+            </li>
+          </ul>
+
+          <template v-if="pick">
+            <div class="row">
+              <h2>It was {{ whosThat.name }}!</h2>
+              <h2 v-if="pick === whosThat.name">Good Pick!</h2>
+            </div>
+
+            <div class="row">
+              <button class="btn" v-on:click="reset">Try Again!</button>
+            </div>
+        </div>
+        </template>
       </div>
-      <ul class="choices row">
-        <li class="choice" v-for="choice in choices">
-          <button class="btn" v-on:click="choose(choice)">{{ choice }}</button>
-        </li>
-      </ul>
-
-      <template v-if="pick">
-        <div class="row">
-          <h2>It was {{ whosThat.name }}!</h2>
-          <h2 v-if="pick === whosThat.name">Good Pick!</h2>
-        </div>
-
-        <div class="row">
-          <button class="btn" v-on:click="reset">Try Again!</button>
-        </div>
-      </template>
 
     </div>
 
