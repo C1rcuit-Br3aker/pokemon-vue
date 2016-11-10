@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: 'Sigmar One', cursive;
+  text-align: center;
+  animation: pulse 30s running;
+}
+
+@keyframes pulse {
+  0% {
+    filter: hue-rotate(0);
+  }
+  100% {
+    filter: hue-rotate(160deg);
+  }
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  background: #b00;
+}
+
+.frame {
+  min-width: 20rem;
+}
+
+.whos-that {
+  width: 100%;
+  filter: brightness(0) drop-shadow(0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.8));
+}
+
+.whos-that.show {
+  filter: none;
+}
+
+.row {
+  margin: 1rem 0;
+}
+
+.choices {
+  display: flex;
+  margin: 0 -1rem;
+}
+
+.choice {
+  margin: 0 1rem;
+}
+
+.btn {
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 0.4rem;
+
+  background: #00b;
+  color: #fff;
+  font: inherit;
+}
