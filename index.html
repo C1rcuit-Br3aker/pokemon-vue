@@ -13,24 +13,33 @@
         <h1 class="card__header">Who's That Pokemon?</h1>
         <div class="card__image">
           <div class="frame">
-            <img :src="whosThat.sprite" alt="" class="whos-that" :class="pick ? 'show': null">
+            <img src="http://lorempixel.com/200/200/" alt="" class="whos-that" >
           </div>
         </div>
         <div class="card__content">
           <ul class="choices row">
-            <li class="choice" v-for="choice in choices">
-              <button class="btn" v-on:click="choose(choice)">{{ choice }}</button>
+            <li class="choice">
+              <button class="btn">Bulbasaur</button>
+            </li>
+            <li class="choice">
+              <button class="btn">Pikachu</button>
+            </li>
+            <li class="choice">
+              <button class="btn">Charmander</button>
+            </li>
+            <li class="choice">
+              <button class="btn">Ratatta</button>
             </li>
           </ul>
 
-          <template v-if="pick">
+          <template>
             <div class="row">
-              <h2>It was {{ whosThat.name }}!</h2>
-              <h2 v-if="pick === whosThat.name">Good Pick!</h2>
+              <h2>It was Pikachu!</h2>
+              <h2>Good Pick!</h2>
             </div>
 
             <div class="row">
-              <button class="btn" v-on:click="reset">Try Again!</button>
+              <button class="btn">Try Again!</button>
             </div>
         </div>
         </template>
